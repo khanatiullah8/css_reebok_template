@@ -1,0 +1,1706 @@
+@charset "utf-8";
+/* ==========================================================================
+   1. CSS Reset Code
+   ========================================================================== */
+
+/* 1.1. Eric Meyers Reset
+   http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+   ========================================================================== */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img,
+ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure,
+figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* Force scrollbar */
+html { overflow-y: scroll; }
+
+/* Align radios and text inputs with their label */
+
+input[type='radio'] { vertical-align: text-bottom; }
+
+/* Hand cursor on clickable input elements */
+label,
+input[type='button'],
+input[type='submit'],
+button {
+  cursor: pointer;
+}
+
+strong {
+  font-weight: bold;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+em { font-style: italic; }
+
+img {
+  width: 100%;
+  border: 0;
+  vertical-align: middle;
+}
+
+sub,
+sup {
+  vertical-align: baseline;
+  position: relative;
+  font-size: 55%;
+  line-height: 0;
+}
+
+sup { top: -.7em; }
+sub { bottom: -.25em; }
+
+/* 1.2. Clear Fix
+   ========================== */
+
+.cf:before,
+.cf:after {
+  display: table;
+  content: " ";
+}
+
+.cf:after { clear: both; }
+.cf { *zoom: 1; }
+
+/*for all*/
+body {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+a { 
+  display: inline-block;
+  text-decoration: none; 
+  transition: .3s;
+}
+
+li {
+  display: inline-block;
+  list-style-type: none;
+}
+
+/* common styling starts here */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --clr-grey1: #989898;
+  --clr-grey2: #494948;
+  --clr-grey3: #42423d;
+  --clr-grey4: #32332f;
+  --clr-grey5: #262626;
+  --clr-fb: #4267b2;
+  --clr-pink: #c22436;
+  --clr-black: #000;
+  --clr-white: #fff;
+  --clr-yellow: #eacb18;
+  --clr-offwhite: #f2f2f2;
+  --bg-transparent1: rgba(0,0,0,0.1);
+  --bg-transparent2: rgba(0,0,0,0.5);
+}
+
+input[type],
+textarea,
+button {
+  border: none;
+  display: inline-block;
+  outline: none;
+  background-color: transparent;
+}
+
+span {
+  display: inline-block;
+}
+
+::placeholder {
+  color: var(--clr-grey2);
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+::first-letter {
+  text-transform: uppercase;
+}
+
+.section-heading {
+  color: var(--clr-grey2);
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  transform: scaleY(1.9);
+}
+
+/* common styling ends here */
+
+/*for wrapper*/
+.wrapper {
+  max-width: 1360px;
+  width: 75.5%; 
+  margin: 0 auto;
+}
+/*=================================
+  Header styling starts here
+=================================*/
+
+/* header top section starts here */
+
+.header-top {
+  background-color: var(--clr-offwhite);
+}
+
+.header-top-left h1 {
+  flex-shrink: 0;
+}
+
+.header-top .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-top-left,
+.header-top-right {
+  display: flex;
+  align-items: center;
+}
+
+.header-top-left form {
+  border-radius: 3px;
+  margin: 0 28px 0 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: var(--bg-transparent1);
+}
+
+.header-top-left input {
+  padding: 9px 5px 8px 15px;
+  box-shadow: inset 0 0 5px var(--clr-grey2);
+}
+
+.header-top-left button {
+  width: 32px;
+  padding: 6px 0 5px;
+  position: relative;
+  background-color: var(--clr-grey5);
+  color: var(--clr-white);
+  font-size: 18px;
+  text-indent: -99999px;
+}
+
+.header-top-left button::before {
+  content: '\f002';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: .3s;
+  font-family: 'fontAwesome';
+  text-indent: 0;
+}
+
+.header-shiping-returns a {
+  color: var(--clr-grey2);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: capitalize;
+  transform: scaley(1.5);
+}
+
+.header-wishlist {
+  padding: 17px 15px 18px;
+  box-shadow: inset 2px 0 5px var(--bg-transparent1);
+}
+
+.header-login {
+  padding: 15px 15px 18px;
+  box-shadow: 2px 0 5px var(--bg-transparent1);
+}
+
+.header-top-right a {
+  position: relative;
+  color: var(--clr-grey2);
+  font-size: 11px;
+  vertical-align: bottom;
+}
+
+.header-wishlist a::before {
+  content: '\f005';
+  margin-right: 3px;
+  position: inherit;
+  bottom: 2px;
+  font-family: 'fontAwesome';
+  font-size: 12px;
+  text-indent: 0;
+}
+
+.header-login a::before {
+  content: '\f234';
+  margin-right: 3px;
+  font-family: 'fontAwesome';
+  font-size: 20px;
+  text-indent: 0;
+}
+
+.header-cart {
+  padding: 17px 32px 18px;
+  margin-right: 5px;
+  position: relative;
+}
+
+.header-cart a {
+  position: relative;
+  z-index: 1;
+  text-indent: -99999px;
+}
+
+.header-cart a::before {
+  content: '\f07a';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'fontAwesome';
+  font-size: 30px;
+  text-indent: 0;
+}
+
+.header-cart span {
+  padding: 1px 7px;
+  border-radius: 10px;
+  position: absolute;
+  top: 20%;
+  left: 60%;
+  z-index: 2;
+  background-color: var(--clr-pink);
+  color: var(--clr-white);
+  font-size: 10px;
+  font-weight: 600;
+}
+
+/* header top section ends here */
+
+/* menu toggle button starts here */
+
+.menu-toggle {
+  width: 32px;
+  height: 32px;
+  display: none;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+
+.menu-toggle .bar {
+  width: 100%;
+  height: 4px;
+  border-radius: 4px;
+  position: relative;
+  background-color: var(--clr-pink);
+  text-indent: -99999px;
+  transition: all .3s;
+}
+
+.bar::before,
+.bar::after {
+  content: '';
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+  position: absolute;
+  left: 0;
+  background-color: inherit;
+  transition: all .3s;
+}
+
+.bar::before { top: 14px; }
+.bar::after { top: 28px; }
+
+.menu-toggle:hover .bar {
+  transform: translateY(14px) rotate(45deg) scale(1.1);
+}
+
+.menu-toggle:hover .bar::before { top: 100px; }
+
+.menu-toggle:hover .bar::after {
+  top: 0;
+  transform: rotate(-90deg);
+}
+
+/* menu toggle button ends here */
+
+/* header bottom section starts here */
+
+nav {
+  background-color: var(--clr-black);
+}
+
+nav .wrapper {
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+}
+
+nav .main-menu {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+}
+
+nav .menu-list:last-child { 
+  position: absolute;
+  right: 0;
+}
+
+nav .menu-list:nth-child(6) > a,
+nav .menu-list:nth-child(7) > a {
+  color: var(--clr-yellow);
+}
+
+nav .menu-list:nth-child(7) > a {
+  text-transform: uppercase;
+}
+
+nav a {
+  position: relative;
+  color: var(--clr-white);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+nav .menu-list > a::after {
+  content: '\f078';
+  margin-left: 4px;
+  font-family: 'fontAwesome';
+  font-size: 8px;
+  text-indent: 0;
+  vertical-align: middle;
+}
+
+nav .sub-menu {
+  width: 100%;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: absolute;
+  top: 145%;
+  left: 0;
+  z-index: 5;
+  transition: .3s;
+  background-color: var(--clr-yellow);
+  box-shadow: 0 0 5px var(--clr-grey2);
+  opacity: 0;
+  visibility: hidden;
+}
+
+nav .menu-list a:hover ~ .sub-menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+.sub-menu:hover {
+  opacity: 1;
+  visibility: visible;
+}
+
+nav .sub-menu-list > a {
+  color: var(--clr-grey5);
+}
+
+/* header bottom section ends here */
+
+/*=================================
+  Header styling ends here
+=================================*/  
+
+/*=================================
+  main styling starts here
+=================================*/
+
+/* banner section starts here */
+
+.banner {
+  position: relative;
+}
+
+.banner .wrapper,
+.banner .slider-group {
+  width: 100%;
+  position: relative;
+}
+
+.banner .slider-list {
+  width: 100%;
+  height: 59vh;
+  position: relative;
+}
+
+.slider-list:not(:first-child) {
+  display: none;
+}
+
+.slider-list figure,
+.slider-list > figure img {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  object-fit: cover;
+}
+
+.slider-list .section-wrapper {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 65px;
+  right: 12.25%;
+  color: var(--clr-grey5); 
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.banner-brand-name span {
+  font-size: 40px;
+  font-weight: 500;
+  vertical-align: middle;
+}
+
+.banner-brand-name {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.banner-brand-name img {
+  width: 362px;
+  margin-left: 28px;
+  box-shadow: 0 0 5px var(--clr-grey2);
+}
+
+.banner-slider-content > p:first-of-type {
+  margin: 6px 0 0;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  word-spacing: 2px;
+}
+
+.banner-slider-content > p:last-of-type {
+  margin: 25px 0 60px;
+  transform: scaleY(1.5);
+  color: var(--clr-pink);
+  font-size: 15px;
+  font-weight: 600;
+  word-spacing: 1px;
+}
+
+.banner-button-box {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+}
+
+.banner-button-box a {
+  width: 257px;
+  padding: 9px 0;
+  border: 1px solid var(--clr-offwhite);
+  border-radius: 2px;
+  transform: scaleY(1.7);
+  background: var(--bg-transparent2);
+  color: var(--clr-white);
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.banner .wrapper > .section-wrapper {
+  width: 75.5%;
+  margin: 0 auto;
+}
+
+.banner > .wrapper .slider-control {
+  width: 26.5%;
+  padding: 5px 32px;
+  border-radius: 20px;
+  margin-left: 5px;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 25px;
+  background-color: var(--bg-transparent2);
+}
+
+.slider-control-box {
+  padding: 0 8px;
+  border-right: 1px dashed var(--clr-grey1);
+  display: flex;
+  align-items: center;
+}
+
+.slider-control-box span {
+  position: relative;
+  transition: .3s;
+  text-indent: -99999px;
+}
+
+.slider-control-box .slider-auto-play::before {
+content: '\f04c';
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+color: var(--clr-white);
+font-family: 'fontAwesome';
+font-size: 10px;
+text-indent: 0;
+}
+
+.slider-auto-play {
+  margin-right: 10px;
+}
+
+.slider-control-btn {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  margin: 0 3px;
+  background-color: var(--clr-grey1);
+}
+
+.slider-control-btn:nth-child(2) {
+  background-color: var(--clr-white);
+}
+
+.slider-brand-name span {
+  padding: 0 10px;
+  color: var(--clr-white);
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+/* banner section ends here */
+
+/* general category section starts here */
+
+.general-category {
+  background-color: var(--clr-offwhite);
+}
+
+.general-category .wrapper {
+  padding: 58px 0 16px;
+}
+
+.general-category-menu {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.general-category-list {
+  flex-basis: 25%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.general-category-list div {
+  display: flex;
+  gap: 30px;
+}
+
+.general-category-list div figure {
+  margin-left: 15px;
+}
+
+.general-category-submenu {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.general-category-submenu a {
+  color: var(--clr-grey3);
+  font-size: 14px;
+}
+
+.general-category-submenu a::before {
+  content: '\f054';
+  margin-right: 3px;
+  font-family: 'fontAwesome';
+  font-size: 8px;
+  text-indent: 0;
+}
+
+/* general category section ends here */
+
+/* fitness & training section starts here */
+
+.fitness-training {
+  background: url(../images/fitnesstrainingbg.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.fitness-training .wrapper {
+  padding: 25px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.fitness-training ul {
+  margin-top: 70px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.fitness-training li {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 47px;
+}
+
+.fitness-training figure {
+  box-shadow: 0 0 5px var(--clr-grey2);
+}
+
+/* fitness & training section ends here */
+
+/* world of reebok section starts here */
+
+.world-of-reebok .wrapper {
+  padding: 54px 0 37px;
+  display: flex;
+  flex-direction: column;
+}
+
+.world-of-reebok ul {
+  margin-top: 27px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.world-of-reebok li {
+  flex-basis: 23.5%;
+}
+
+.world-of-reebok a {
+  padding: 20px;
+  color: var(--clr-grey5);
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.world-of-reebok a[title="REEBOK CLASSIC"] {
+  text-transform: uppercase;
+}
+
+/* world of reebok section ends here */
+
+/*=================================
+  main styling ends here
+=================================*/
+
+/*=================================
+  footer styling starts here
+=================================*/ 
+
+/* footer sub-section 1 starts here */
+
+.footer-brand-contact {
+  background-color: var(--clr-grey4);
+}
+
+.footer-brand-contact ul {
+  display: flex;
+  align-items: center;
+  color: var(--clr-white);
+  font-size: 14px;
+}
+
+.footer-brand-contact li {
+  padding: 18px 20px;
+}
+
+.footer-brand-contact li:first-child {
+  padding-left: 0;
+}
+
+.footer-brand-contact li:nth-child(2),
+.footer-brand-contact li:nth-child(3) {
+  box-shadow: inset 3px 0 6px var(--clr-grey5);
+}
+
+.footer-brand-contact a {
+  color: var(--clr-white);
+}
+
+.footer-brand-contact a[title="customer.care@reebok.com"]::first-letter {
+  text-transform: lowercase;
+}
+
+/* footer sub-section 1 ends here */
+
+/* footer sub-section 2 starts here */
+
+.footer-menu {
+  background-color: var(--clr-grey3);
+}
+
+.footer-menu .wrapper {
+  padding: 42px 0 37px;
+}
+
+.footer-menu .wrapper > ul {
+  display: flex;
+  align-items: flex-start;
+} 
+
+.footer-menu-list {
+  flex-basis: 19%;
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+.footer-menu-list .footer-submenu {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.footer-menu-list h4 {
+  margin-bottom: 2px;
+  color: var(--clr-grey1);
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.footer-submenu li a {
+  color: var(--clr-white);
+  font-size: 12px;
+}
+
+.footer-menu-list:last-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer-menu-list a[title="Facebook Share"] {
+  border-radius: 3px;
+  margin-right: 18px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+  background-color: var(--clr-fb);
+  font-size: 12px;
+}
+
+.footer-menu-list a[title="Facebook Share"]::before {
+  content: '';
+  width: 100%;
+  height: 50%;
+  border-radius: 3px 3px 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: var(--clr-white);
+}
+
+a[title="Facebook Share"] span {
+  padding: 3px 4px;
+  z-index: 2;
+}
+
+a[title="Facebook Share"] span:first-child {
+  color: var(--clr-grey5);
+}
+
+a[title="Facebook Share"] .fb-share {
+  color: var(--clr-white);
+  font-weight: 600;
+}
+
+a[title="Facebook Share"] .fb-share::before {
+  content: '\f230';
+  margin-right: 7px;
+  font-family: 'fontAwesome';
+  font-size: 14px;
+  text-indent: 0;
+  vertical-align: middle;
+}
+
+/* footer sub-section 2 ends here */
+
+/* footer sub-section 3 starts here */
+
+.footer-sign-up {
+  background-color: var(--clr-grey2);
+}
+
+.footer-sign-up .wrapper {
+  padding: 37px 0 27px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-sign-up .footer-signup-content {
+  position: relative;
+  transform: scaleY(2);
+  color: var(--clr-white);
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.footer-signup-content span {
+  position: relative;
+  transform: translateY(-2px);
+}
+
+.footer-signup-content span:first-child {
+  margin-right: 2px;
+  color: var(--clr-pink);
+}
+
+.footer-signup-button a {
+  padding: 10px 13px 10px 7px;
+  border-radius: 5px;
+  background-color: var(--clr-pink);
+  color: var(--clr-white);
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.footer-signup-button a::after {
+  content: '\f054';
+  padding: 4px 5px;
+  border-radius: 50%;
+  margin-left: 62px;
+  transition: .3s;
+  background-color: var(--clr-white);
+  color: var(--clr-pink);
+  font-family: 'fontAwesome';
+  text-indent: 0;
+  font-size: 10px;
+  vertical-align: middle;
+}
+
+/* footer sub-section 3 ends here */
+
+/* footer sub-section 4 starts here */
+
+.footer-payment-mode {
+  background-color: var(--clr-grey3);
+}
+
+.footer-payment-mode .wrapper {
+  padding: 43px 0 78px;
+}
+
+.footer-payment-mode ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.footer-payment-mode li {
+  flex-shrink: 0;
+}
+
+/* footer sub-section 4 ends here */
+
+/* footer sub-section 5 starts here */
+
+.footer-copy-right {
+  background-color: var(--clr-grey3);
+}
+
+.footer-copy-right .wrapper {
+  padding: 10px 0 13px 14.5%;
+}
+
+.footer-copy-right span,
+.footer-copy-right a {
+  color: var(--clr-grey1);
+  font-size: 14px;
+}
+
+.footer-copy-right figure {
+  display: inline-block;
+}
+
+/* footer sub-section 5 ends here */
+
+/* move-to-top-&-chat button section starts here */
+
+.top-chat {
+  position: fixed;
+  right: 2%;
+  bottom: 32px;
+  z-index: 4;
+}
+
+.top-chat a:first-child {
+  padding: 20px 10px 10px;
+  border-radius: 5px;
+  position: relative;
+  background-color: var(--clr-black);
+  color: var(--clr-white);
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.top-chat a:first-child::before {
+  content: '\f0d8';
+  position: absolute;
+  top: 18%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'fontAwesome';
+  text-indent: 0;
+}
+
+.top-chat a:last-child {
+  padding: 20px 0 0 20px;
+  margin-left: 14px;
+  position: relative;
+  color: var(--clr-white);
+  font-size: 13px;
+  text-shadow: 1px 1px 0 var(--clr-black);
+  text-transform: capitalize;
+}
+
+.top-chat a:last-child::before {
+  content: '\f0e6';
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  color: var(--clr-black);
+  font-family: 'fontAwesome';
+  font-size: 50px;
+  text-indent: 0;
+}
+
+/* move-to-top-&-chat button section ends here */
+
+ /*=================================
+  footer styling ends here
+=================================*/ 
+
+/*media query starts*/
+
+/*media query for min-width: 1024px starts here*/
+@media only screen and (min-width: 1024px) {
+
+  .header-top-left button:hover::before {
+    color: var(--clr-yellow);
+  }
+
+  .header-shiping-returns a:hover {
+    color: var(--clr-grey5);
+  }
+
+  .header-top-right a:hover,
+  .header-top-right a:hover::before {
+    color: var(--clr-grey5);
+  }
+
+  nav a:hover {
+    color: var(--clr-yellow);
+  }
+
+  nav .sub-menu-list a:hover {
+    color: var(--clr-pink);
+  }
+
+  .banner-button-box a:hover {
+    background-color: var(--clr-pink);
+  }
+
+  .slider-control-box span:hover {
+    background-color: var(--clr-white);
+  }
+
+  .general-category-submenu a:hover {
+    color: var(--clr-pink);
+  }
+
+  .fitness-training-link a:hover {
+    color: var(--clr-pink);
+  }
+
+  .world-of-reebok a:hover {
+    color: var(--clr-pink);
+  }
+
+  .footer-brand-contact a:hover {
+    color: var(--clr-grey1);
+    text-decoration: underline;
+  }
+
+  .footer-submenu li a:hover {
+    padding-left: 4px;
+    color: var(--clr-pink)
+  }
+
+  .footer-menu-list a[title="Facebook Share"]:hover {
+    opacity: .7;
+  }
+
+  .footer-signup-button a:hover {
+    background-color: var(--clr-white);
+    color: var(--clr-pink);
+  }
+  
+  .footer-signup-button a:hover::after {
+    background-color: var(--clr-pink);
+    color: var(--clr-white);
+  }
+
+  .footer-copy-right a:hover {
+    text-decoration: underline;
+  }
+
+  .top-chat a:hover {
+    opacity: 0.5;
+  }
+
+} 
+
+/*media query for max-width: 1024px starts here*/
+@media only screen and (max-width: 1024px) {
+
+  .wrapper {
+    width: 95%;
+  }
+
+  /* header top section starts here */
+
+  .header-cart {
+    margin-right: 0;
+  }
+
+  /* header top section ends here */
+
+  /* banner section starts here */
+
+  .slider-list .section-wrapper {
+    right: 2.5%;
+  }
+
+  .banner-brand-name img {
+    width: 280px;
+    margin-left: 20px;
+  }
+
+  .banner-slider-content > p:first-of-type {
+    letter-spacing: 1px;
+    word-spacing: 5px;
+  }
+
+  .banner-button-box a {
+    width: 200px;
+    padding: 6px 0;
+  }
+
+  .banner .wrapper > .section-wrapper {
+    width: 95%;
+  }
+
+  /* banner section ends here */
+
+  /* general category section starts here */
+
+  .general-category-list div figure {
+    margin-left: 0;
+  }
+
+  /* general category section ends here */
+
+  /* fitness & training section starts here */
+
+  .fitness-training ul {
+    margin-top: 40px;
+    justify-content: space-between;
+  }
+
+  .fitness-training li {
+    gap: 30px;
+  }
+
+  /* fitness & training section ends here */
+
+  /* world of reebok section starts here */
+
+  .world-of-reebok a {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+  }
+
+  /* world of reebok section ends here */
+
+  /* footer section starts here */
+
+  /* footer sub-section 2 starts here */
+
+  .footer-menu-list {
+    flex-basis: 20%;
+  }
+
+  /* footer sub-section 2 ends here */
+
+  /* move-to-top-&-chat button section starts here */
+
+  .top-chat {
+    right: 3%;
+    bottom: 20px;
+  }
+
+  .top-chat a:first-child {
+    padding: 17px 7px 10px;
+    border-radius: 5px;
+  }
+
+  .top-chat a:last-child {
+    padding: 15px 0 0 20px;
+    margin-left: 5px;
+  }
+  
+  .top-chat a:last-child::before {
+    font-size: 40px;
+  }
+
+  /* move-to-top-&-chat button section ends here */
+
+  /* footer section ends here */
+
+}  
+
+/*media query for max-width: 767px starts here*/
+@media only screen and (max-width: 767px) {
+
+  /* header section starts here */
+
+  header {
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 11;
+    position: sticky;
+    top: 0;
+    background-color: var(--clr-offwhite);
+    box-shadow: 0 0 7px var(--clr-grey2)
+  }
+
+  /* header top */
+
+  .header-top {
+    background-color: transparent;
+  }
+
+  .header-top .wrapper {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .header-top-left {
+    gap: 5px;
+  }
+
+  .header-top-left form {
+    display: none;
+  }
+
+  .header-top-left input {
+    padding: 9px 5px 8px;
+  }
+
+  .header-shiping-returns a {
+    display: none;
+  }
+
+  .header-wishlist,
+  .header-login {
+    padding: 0;
+    box-shadow: none;
+  }
+
+  .header-top-right a {
+    position: relative;
+    text-indent: -99999px;
+  }
+
+  .header-wishlist a::before {
+    display: none;
+  }
+  
+  .header-top-right {
+    padding: 0 10px;
+    display: flex;
+    gap: 10px;
+  }
+
+  .header-login a::before {
+    margin-right: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+  }
+
+  .header-cart {
+    margin-right: 0;
+  }
+
+  /* header bottom */
+
+  .menu-toggle {
+    display: block;
+    z-index: 12;
+    flex-shrink: 0;
+  }
+
+  nav {
+    width: 70%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    transition: .3s;
+    opacity: 0;
+    visibility: hidden;
+    background-color: var(--clr-black);
+  }
+
+  .menu-toggle:hover ~ nav,
+  nav:hover {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  nav .wrapper {
+    width: 100%;
+    height: 100%;
+    padding: 70px 0;
+    align-items: flex-start;
+  }
+  
+  nav .main-menu {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+  }
+  
+  nav .menu-list {
+    padding: 10px 0 10px 20px;
+  }
+
+  nav .menu-list:last-child { 
+    position: relative;
+  }
+  
+  nav .menu-list:nth-child(6) > a,
+  nav .menu-list:nth-child(7) > a {
+    color: var(--clr-white);
+  }
+
+  nav .sub-menu {
+    padding: 0;
+    display: none;
+    position: relative;
+    top: 10px;
+    left: 0;
+    z-index: 10;
+    opacity: 1;
+    visibility: visible;
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  .sub-menu .sub-menu-list {
+    display: block;
+  }
+
+  nav .menu-list:hover > .sub-menu {
+    display: block;
+  }
+
+  nav .sub-menu-list > a {
+    color: var(--clr-white);
+  }
+
+  /* header section ends here */
+
+  /* banner section starts here */
+
+  .banner .slider-list {
+    height: 95vh;
+  }
+
+  .slider-list .section-wrapper {
+    width: 100%;
+    top: 50%;
+    right: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .banner-slider-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .banner-brand-name {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .banner-brand-name span {
+    font-size: 32px;
+  }
+
+  .banner-brand-name img {
+    width: 50%;
+    margin-left: 10px;
+  }
+
+  .banner-button-box {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .banner-button-box a {
+    width: 40%;
+  }
+
+  .banner > .wrapper .slider-control {
+    width: 50%;
+    margin-left: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  /* banner section ends here */
+
+  /* general category section starts here */
+
+  .general-category .wrapper {
+    padding: 50px 0;
+  }
+
+  .general-category-menu {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  .general-category-list {
+    flex-basis: 45%;
+  }
+
+  /* general category section ends here */
+
+  /* fitness & training section starts here */
+
+  .fitness-training .wrapper {
+    padding: 50px 0;
+    align-items: center;
+  }
+
+  .fitness-training ul {
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .fitness-training li {
+    flex-basis: 40%;
+    gap: 15px;
+  }
+
+  .fitness-training figure {
+    width: 70%;
+  }
+
+  /* fitness & training section ends here */
+
+  /* world of reebok section starts here */
+
+  .world-of-reebok .wrapper {
+    padding: 50px 0;
+    align-items: center;
+  }
+
+  .world-of-reebok ul {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  
+  .world-of-reebok li {
+    flex-basis: 45%;
+  }
+
+  /* world of reebok section ends here */
+
+  /* footer section starts here */
+
+  /* footer sub-section 1 starts here */
+
+  .footer-brand-contact .wrapper {
+    padding: 20px;
+  }
+  .footer-brand-contact ul {
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .footer-brand-contact li {
+    padding: 0;
+  }
+
+  .footer-brand-contact li:nth-child(2),
+  .footer-brand-contact li:nth-child(3) {
+    box-shadow: none;
+  }
+
+  /* footer sub-section 1 ends here */
+
+  /* footer sub-section 2 starts here */
+
+  .footer-menu .wrapper {
+    padding: 30px 0;
+  }
+
+  .footer-menu .wrapper > ul {
+    flex-wrap: wrap;
+    gap: 30px;
+  } 
+
+  .footer-menu-list {
+    flex-basis: 100%;
+    align-items: center;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .footer-menu-list .footer-submenu {
+    gap: 5px;
+  }
+  
+  .footer-menu-list h4 {
+    margin-bottom: 5px;
+    font-size: 17px;
+  }
+
+  .footer-submenu li a {
+    font-size: 15px;
+  }
+
+  /* footer sub-section 2 ends here */
+
+  /* footer sub-section 3 starts here */
+
+  .footer-sign-up .wrapper {
+    padding: 30px 0;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  /* footer sub-section 3 ends here */
+
+  /* footer sub-section 4 starts here */
+
+  .footer-payment-mode .wrapper {
+    padding: 30px 0;
+  }
+
+  .footer-payment-mode ul {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  /* footer sub-section 4 ends here */
+
+  /* footer sub-section 5 starts here */
+
+  .footer-copy-right .wrapper {
+    padding: 30px 0;
+    text-align: center;
+  }
+
+  /* footer sub-section 5 ends here */
+
+}
+
+/*media query for max-width: 540px starts here*/
+@media only screen and (max-width: 540px) {
+
+  /* banner section starts here */
+
+  .slider-list .section-wrapper {
+    padding: 0 10px;
+  }
+
+  .banner-brand-name span {
+    font-size: 25px;
+  }
+
+  .banner-slider-content > p:first-of-type {
+    margin: 10px 0 0;
+    font-size: 13px;
+    letter-spacing: 2px;
+    word-spacing: 0;
+  }
+  
+  .banner-slider-content > p:last-of-type {
+    margin: 25px 0 30px;
+    font-size: 13px;
+  }
+
+  .banner-button-box a {
+    font-size: 11px;
+  }
+
+  .banner > .wrapper .slider-control {
+    width: 70%;
+  }
+
+  /* banner section ends here */
+
+  /* general category section starts here */
+
+  .general-category-menu {
+    gap: 0;
+  }
+
+  .general-category-list {
+    padding: 25px 0;
+    border-bottom: 2px solid var(--clr-grey2);
+    flex-basis: 100%;
+    align-items: center;
+  }
+
+  .general-category-list .section-heading {
+    margin-bottom: 20px;
+  }
+
+  .general-category-list:last-child {
+    border-bottom: none;
+  }
+
+  /* general category section ends here */
+
+  /* fitness & training section starts here */
+
+  .fitness-training ul {
+    gap: 0;
+  }
+
+  .fitness-training li {
+    padding: 30px 0;
+    border-bottom: 2px solid var(--clr-grey2);
+    flex-basis: 100%;
+  }
+
+  .fitness-training li:last-child {
+    border-bottom: none;
+  }
+
+  .fitness-training figure {
+    width: 65%;
+  }
+
+  /* fitness & training section ends here */
+
+  /* world of reebok section starts here */
+
+  .world-of-reebok ul {
+    gap: 0;
+  }
+  
+  .world-of-reebok li {
+    padding: 30px 0;
+    border-bottom: 2px solid var(--clr-grey2);
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .world-of-reebok li:last-child {
+    border-bottom: none;
+  }
+
+  .world-of-reebok li figure {
+    width: 65%;
+  }
+
+  /* world of reebok section ends here */
+
+   /* footer section starts here */
+
+   /* footer sub-section 3 starts here */
+
+   .footer-sign-up .footer-signup-content {
+    font-size: 12px;
+  }
+
+   /* footer sub-section 3 ends here */
+
+   /* footer section ends here */
+
+}
